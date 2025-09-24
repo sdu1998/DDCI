@@ -7,3 +7,4 @@ scipy
 statsmodels
 darts==0.30.0
 tqdm
+prophet
