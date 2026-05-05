@@ -615,6 +615,8 @@ def DDCI(
         # max_score = scores[:t_lr].max() if t >= T_burnin else 0
         # sigmoid(max_score)
         # sigmoid_max = 1 / (1 + np.exp(-0.1*max_score))
+        if scale > 1: 
+            scale = 1
         eq = 1 * scale * np.tanh(0.5*delta)  # (s-q)*f'
         # eq = (scores[t_pred]-qs[t_pred])*c*np.exp(-c*(scores[t_pred]-qs[t_pred]))/((1+np.exp(-c*(scores[t_pred]-qs[t_pred]))) ** 2)
 
@@ -764,6 +766,8 @@ def DDCI_Nex(
         max_score = scores[:t_lr].max() if t >= T_burnin else 0
         # sigmoid(max_score)
         sigmoid_max = 1 / (1 + np.exp(-0.1*max_score))
+        if scale > 1: 
+            scale = 1
         eq = sigmoid_max * scale * np.tanh(0.5*delta)
         # eq = (scores[t_pred]-qs[t_pred])*c*np.exp(-c*(scores[t_pred]-qs[t_pred]))/((1+np.exp(-c*(scores[t_pred]-qs[t_pred]))) ** 2)
 
